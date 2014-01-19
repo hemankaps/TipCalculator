@@ -1,0 +1,80 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".TipCalculatorActivity" >
+
+    <EditText
+        android:id="@+id/etTotalAmt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal" >
+
+        <requestFocus />
+    </EditText>
+
+   
+
+    <Button
+        android:id="@+id/btTenPercent"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/etTotalAmt"
+        android:layout_alignRight="@+id/etTotalAmt"
+        android:layout_below="@+id/etTotalAmt"
+        android:layout_marginRight="29dp"
+        android:layout_marginTop="73dp"
+        android:onClick="onClick10Percent"
+        android:text="10%" />
+    
+       <Button
+        android:id="@+id/btFifteenPercent"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvTipText"
+        android:layout_toRightOf="@+id/tvTipText"
+        android:onClick="onClick15Percent"
+        android:text="15%" />
+       
+     <Button
+        android:id="@+id/btTwentyPercent"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btFifteenPercent"
+        android:layout_alignTop="@+id/btFifteenPercent"
+        android:layout_toRightOf="@+id/btFifteenPercent"
+        android:onClick="onClick20Percent"
+        android:text="20%" />
+
+    <TextView
+        android:id="@+id/tvTipText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/btTenPercent"
+        android:layout_below="@+id/btTenPercent"
+        android:layout_marginRight="34dp"
+        android:layout_marginTop="123dp"
+        android:text="Tip is: "
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+    
+     <EditText
+        android:id="@+id/etTipAmt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvTipText"
+        android:layout_alignBottom="@+id/tvTipText"
+        android:layout_alignRight="@+id/btTwentyPercent"
+        android:layout_toRightOf="@+id/tvTipText"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+ 
+</RelativeLayout>
