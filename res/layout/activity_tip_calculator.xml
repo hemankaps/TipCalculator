@@ -2,12 +2,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_color"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".TipCalculatorActivity" >
 
+  
     <EditText
         android:id="@+id/etTotalAmt"
         android:layout_width="wrap_content"
@@ -76,5 +78,35 @@
         android:ems="10"
         android:inputType="numberDecimal" />
 
+     <TextView
+         android:id="@+id/tvCustomTip"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_above="@+id/btFifteenPercent"
+         android:layout_alignLeft="@+id/etTotalAmt"
+         android:layout_marginBottom="26dp"
+         android:layout_marginLeft="16dp"
+         android:text="Custom Tip:" />
+
+     <EditText
+         android:id="@+id/etCustomTip"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignBaseline="@+id/tvCustomTip"
+         android:layout_alignBottom="@+id/tvCustomTip"
+         android:layout_toLeftOf="@+id/btFifteenPercent"
+         android:layout_toRightOf="@+id/tvCustomTip"
+         android:ems="10"
+         android:inputType="numberDecimal" />
+
+     <Button
+         android:id="@+id/btCalculate"
+         style="?android:attr/buttonStyleSmall"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignLeft="@+id/btFifteenPercent"
+         android:layout_alignTop="@+id/etCustomTip"
+         android:onClick="onClickCustomCalc"
+         android:text="Calc" />
  
 </RelativeLayout>

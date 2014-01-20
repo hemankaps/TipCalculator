@@ -24,9 +24,9 @@ public class TipCalculatorActivity extends Activity {
         	public void afterTextChanged(Editable s) {
         		// Fires right after the text has changed
         		String totAmt = s.toString().trim();
-        		if(null != totAmt && !"".equals(totAmt)){
+        		//if(null != totAmt && !"".equals(totAmt)){
         			totalAmt = totAmt;
-        		}
+        		//}
         		
         		updateTipAmt();
         		
@@ -54,6 +54,7 @@ public class TipCalculatorActivity extends Activity {
     	if(null != totalAmt && !"".equals(totalAmt.trim())){
     		etTipAmt.setText(calculateTip(10));
     		lastSelectedPercent = 10;
+    		clearCustomTipText();
     		
     	}
     	
@@ -64,6 +65,7 @@ public class TipCalculatorActivity extends Activity {
     		
     		etTipAmt.setText(calculateTip(15));
     		lastSelectedPercent = 15;
+    		clearCustomTipText();
     	}
     	
     }
@@ -73,13 +75,35 @@ public class TipCalculatorActivity extends Activity {
     		
     		etTipAmt.setText(calculateTip(20));
     		lastSelectedPercent = 20;
+    		clearCustomTipText();
     	}
     	
     }
     
+    public void onClickCustomCalc(View v){
+    	EditText etVal = (EditText) findViewById(R.id.etCustomTip);
+    	String tipAmt = etVal.getEditableText().toString().trim();
+    	if(null != tipAmt && !"".equals(tipAmt)){
+    		double tips = Double.parseDouble(tipAmt);
+    		
+    		etTipAmt.setText(calculateTip(tips));
+    		lastSelectedPercent = tips;
+    	}
+    }
+    
+    
+    private void clearCustomTipText(){
+    	EditText etVal = (EditText) findViewById(R.id.etCustomTip);
+    	etVal.setText("");
+    	
+    }
     private void updateTipAmt() {
 		// TODO Auto-generated method stub
+    	if(null == totalAmt || "".equals(totalAmt.trim())){
+    		etTipAmt.setText("");
+    	} else {
 			etTipAmt.setText(calculateTip(lastSelectedPercent));
+    	}
 	}
     
     private String calculateTip(double percent){
