@@ -87,8 +87,18 @@
         android:id="@+id/tvFinalTipAmt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tvCustomTip"
+        android:layout_alignLeft="@+id/btTenPercent"
         android:layout_alignRight="@+id/btFifteenPercent"
-        android:layout_centerVertical="true" />
+        android:layout_centerVertical="true"
+        android:paddingLeft="10dp" />
+
+    <TextView
+        android:id="@+id/tvTipTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tvFinalTipAmt"
+        android:layout_alignTop="@+id/tvFinalTipAmt"
+        android:layout_toLeftOf="@+id/tvFinalTipAmt"
+        android:text="Tip is:" />
 
 </RelativeLayout>

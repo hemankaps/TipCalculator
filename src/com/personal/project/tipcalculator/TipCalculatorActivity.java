@@ -1,5 +1,7 @@
 package com.personal.project.tipcalculator;
 
+import java.text.DecimalFormat;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -69,7 +71,7 @@ public class TipCalculatorActivity extends Activity {
     
     private void displayTipAmt() {
     	
-    	tvFinalTipAmt.setText("Tip Amount @ " + lastSelectedPercent + "% is = " + tipAmt);
+    	tvFinalTipAmt.setText(tipAmt);
     	
 	}
 
@@ -127,7 +129,9 @@ public class TipCalculatorActivity extends Activity {
     
     private String calculateTip(double percent){
     	Double totAmt = new Double(totalAmt);
-		totAmt = totAmt * percent/100;
+    	DecimalFormat twodps = new DecimalFormat("#.00");
+		totAmt = Double.valueOf(twodps.format(totAmt * percent/100));
+		
 		return  totAmt.toString();
     }
     
